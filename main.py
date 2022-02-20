@@ -57,7 +57,7 @@ def GUI():
     def validate(new_value):
         return new_value == "" or new_value.isalpha()
 
-    def entry_set_call(name, index, mode):
+    def entry_set_call():
         text = imput_str.get()
         if len(text) > maxNum:
             imput_str.set(text[:-1])
