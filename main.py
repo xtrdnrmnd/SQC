@@ -22,19 +22,18 @@ class Symbols(object):
         return seq
 
     def defyNum(self, sequence, length):
-        l = length  # длина строки
-        p = sequence[0]  # первый символ
-        count = 1  # счетчик
-        res = "Результат: "  # здесь будет результат
-        for i in range(l - 1):
-            c = sequence[i + 1]  # следующий символ
-            if (c == p):  # если совпадает с предыдущим - увеличим счетчик
+        first = sequence[0]
+        count = 1
+        res = "Результат: "
+        for i in range(length - 1):
+            c = sequence[i + 1]
+            if (c == first):
                 count += 1
-            else:  # иначе выведем пару
-                res += "(" + str(count) + ")" + p
+            else:
+                res += "(" + str(count) + ")" + first
                 count = 1
-            p = c  # текущий стал предыдущим
-        res += "(" + str(count) + ")" + p  # вывод последней пары
+            first = c
+        res += "(" + str(count) + ")" + first
         return res
 
 
